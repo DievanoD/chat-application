@@ -1,0 +1,120 @@
+/*
+* Navbar
+*/
+.navbar-chat{
+    background-color: rgba(0, 166, 90, 1);
+    /* color: white; */
+}
+
+.navbar-brand {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    font-size: 1rem;
+    background-color: rgba(0, 141, 76, 1);
+    color: white;
+    /*box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);*/
+    /*border-bottom:1px solid #ffffff;*/
+    /*border-right:1px solid #ffffff;*/
+    font-weight: 700;
+}
+
+#navbarsExampleDefault a{
+    color: white;
+}
+
+.dropdown-menu{
+    background-color: rgba(0, 166, 90, 1);
+}
+
+.dropdown-menu:hover, .dropdown-item:hover{
+    background-color: rgb(3, 102, 57);
+    color: white;
+}
+
+.lbl-nav-nome{
+    font-size: 12pt;
+    font-weight: 700;
+}
+
+.navbar .form-control {
+    padding: .75rem 1rem;
+    border-width: 0;
+    border-radius: 0;
+}
+
+/*
+* Sidebar
+*/
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100; /* Behind the navbar */
+    padding: 48px 0 0; /* Height of navbar */
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+    background-color: rgba(58, 76, 84, 1);
+}
+
+.sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+/*@supports ((position: -webkit-sticky) or (position: sticky)) {
+.sidebar-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+}
+}*/
+
+.sidebar .nav-link {
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.feather {
+    width: 16px;
+    height: 16px;
+    vertical-align: text-bottom;
+}
+
+.sidebar .nav-link .feather {
+    margin-right: 4px;
+    color: #999;
+}
+
+.sidebar .nav-link.active {
+    background-color: rgb(30, 40, 44);
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.active .feather {
+    color: inherit;
+}
+
+.sidebar-heading {
+    font-size: .75rem;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+}
+
+.sidebar .nav-item:hover{
+    background-color: rgb(30, 40, 44);
+}
+
+/*
+* Content
+*/
+[role="main"] {
+    padding: 48px 0px 0px 0px; /* Space top of 48px for fixed navbar */
+    width: 100%;
+    height: 100%;
+    /* background-color: #ecf0f5; */
+}

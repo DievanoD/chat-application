@@ -1,0 +1,135 @@
+/* 
+* Painel Raiz das messagens
+*/
+.painel{
+    /* background-color: rgb(255, 251, 211); */
+    width: 100%;
+    /* height: calc(100% - 0px); */
+    height: calc(100% - 56px); /*56px é o tamanho do 2º navbar*/
+}
+
+/* SECTION 1 */
+.messages{
+    background-color:#3a4c54;
+    margin: 0 15%;
+    width: 70%;
+    height: 85%;
+    padding: 1%;
+    border-radius: 5px 5px 0 0;
+}
+
+.screen-mgs{
+    background-color: #E5DDD5;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* SECTION 2 */
+.write-mgs{
+    border-top: 1px solid white;
+    background-color: #3a4c54;
+    margin: 0 15%;
+    width: 70%;
+    height: 15%;
+    padding: 10px;
+}
+
+.card-write-msg{
+    /* background-color: brown; */
+    height: 100%;
+    padding: 10px;
+}
+
+/* Messages styles */
+.row-msg{
+    margin: 15px 0;
+}
+
+/* div Date */
+.cont-date{
+    width: 100%;
+    text-align: center;
+}
+
+.lbl-date{
+    background-color: #E1F3FB;
+    padding: 5px;
+    color: #7D8F97;
+    /* font-weight: bold; */
+    border-radius: 5px;
+}
+/* -------- */
+
+/* Class if i send a message */
+.bg-msg-me{
+    border-radius: 5px;
+    float: right;
+    background-color: rgb(220, 248, 198);
+    width: max-content;
+    /* text-align: end; */
+}
+
+/* Class if someone sends a message */
+.bg-msg-he{
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    width: max-content;
+}
+
+/* Label nickname class */
+.lbl-nick{
+    color: rgba(62, 125, 243, 0.89);
+    font-weight: 700;
+}
+
+ /* Message content class*/
+ .lbl-cont-msg{
+    font-size: 12pt;
+}
+
+/* Message time class */
+.lbl-time-msg{
+    font-size: 8pt;
+    padding: 0px 5px;
+}
+
+/* Back button */
+a:link{
+    text-decoration: none;
+}
+
+.btn-voltar{
+    color: #3a4c54;
+}
+
+.btn-voltar:hover{
+    color: #4f92ff;
+}
+
+.lbl-voltar{
+    position: relative;
+    bottom: 6px;
+    font-weight: bold;
+}
+
+.fa-arrow-alt-circle-left{
+    font-size: 25pt;
+}
+
+.fa-arrow-alt-circle-left:hover{
+    color: #4f92ff;
+     z-index: 2;
+    -webkit-transition: all 700ms ease-out;
+    -webkit-transform: rotate(360deg);
+    -ms-transition: all 700ms ease-out;
+    -ms-transform: rotate(360deg);   
+    -moz-transition: all 700ms ease-out;
+    -moz-transform: rotate(360deg);
+    transition: all 700ms ease-out;
+    transform: rotate(360deg);
+}
+/* --------------------- */

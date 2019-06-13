@@ -1,0 +1,125 @@
+a{
+    color: inherit;
+}
+
+a:link{
+    text-decoration: none;
+}
+
+a:hover{
+    color: inherit;
+}
+
+.section-main{
+  padding: 0px 20px;
+}
+
+.card-add-sala{
+  height: 160px;
+  display: flex;                /* Children use Flexbox */
+  flex-direction: column;       /* Rotate Axis */
+  border: 1px solid #cccccc;     /* Set up Border*/ 
+  border-radius: 10px;          /*Slightly Curve edges */
+  overflow: hidden;             /* Fixes the corners */
+  margin: 5px;                  /* Add space between cards */
+  color: #cccccc;
+}
+
+.fa-plus{
+    margin-top: 20px;
+    font-size: 60pt;
+}
+
+.main-description-add{
+  /*color: #cccccc;*/
+  font-size: 12px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.card-add-sala:hover{
+    background-color: #f39c12;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    
+    /*box-shadow: 0px 0px 30px #000000;*/
+    z-index: 2;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.05);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.05);   
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.05);
+    /*transition: all 200ms ease-in;*/
+    transform: scale(1.05);
+}
+
+.card-main-add{
+  display: flex;              /* Children use Flexbox */
+  flex-direction: column;     /* Rotate Axis to Vertical */
+  justify-content: center;    /* Group Children in Center */
+  align-items: center;        /* Group Children in Center (on cross axis) */
+  padding: 15px 0;            /* Add padding to the top/bottom */
+}
+
+.card-sala {
+  /*width: 200px;                  Set width of cards */
+  height: 160px;
+  display: flex;                /* Children use Flexbox */
+  flex-direction: column;       /* Rotate Axis */
+  border: 1px solid #494949;
+  border-radius: 10px;           
+  overflow: hidden;             /* Fixes the corners */
+  margin: 5px;                  /* Add space between cards */
+  /*background-color: #25a344;*/
+  color: #494949;
+}
+
+.card-sala:hover{
+    color: #ffffff;
+    background-color: #f39c12;
+    border: 1px solid #ffffff;
+    /*box-shadow: 0px 0px 10px #000000;*/
+    z-index: 2;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.05);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.05);   
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.05);
+    /*transition: all 200ms ease-in;*/
+    transform: scale(1.05);
+}
+
+.card-header {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 10px;
+}
+
+.card-main {
+  display: flex;              /* Children use Flexbox */
+  flex-direction: column;     /* Rotate Axis to Vertical */
+  justify-content: center;    /* Group Children in Center */
+  align-items: center;        /* Group Children in Center (on cross axis) */
+  padding: 15px 0;            /* Add padding to the top/bottom */
+  /*background-color: #ffffff;*/
+}
+
+
+.main-description {
+  font-size: 12px;
+  text-align: center;
+}
+
+.box-sala{
+    font-size: 40pt;
+    margin-bottom: 5px;
+}
+
+.status-sala{
+    text-align: center;
+    font-size: 15pt;
+    margin: 3px 0px;
+}

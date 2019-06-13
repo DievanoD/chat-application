@@ -1,0 +1,149 @@
+<section class="section-main">
+    <div class="row my-3">
+
+        <div class="col-md-3 my-2">
+            <a href="" class="card-add-sala" data-toggle="modal" data-target="#modalSala">
+                <!--<div class="card-header">Nova Sala</div>-->
+                <div class="card-main-add">
+                    <i class="fas fa-plus"></i>
+                    <div class="main-description-add">Add Sala</div>
+                </div>
+            </a>
+        </div>
+
+
+        <div *ngFor="let item of rooms" class="col-md-3 my-2">
+            <div *ngIf="item.is_public === true;else cardPrivate">
+                <a [routerLink]="['/dashboard/room', item._id]" class="card-sala">
+                    <div class="card-header">
+                        <!-- <input type="hidden" value={{item._id}}/> -->
+                        {{item.name}}
+                    </div>
+                    <div class="card-main">
+                        <i class="fas fa-comments box-sala"></i>
+                        <div class="main-description">
+                            {{item.description}}
+                        </div>
+                        <div class="status-sala">
+                            <i [ngClass]="item.is_public ? 'fas fa-lock-open' : 'fas fa-lock'"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <ng-template #cardPrivate>
+                <a href="" class="card-sala" data-toggle="modal" data-target="#modalSenhaSala">
+                    <div class="card-header">
+                        <!-- <input type="hidden" value={{item._id}}/> -->
+                        {{item.name}}
+                    </div>
+                    <div class="card-main">
+                        <i class="fas fa-comments box-sala"></i>
+                        <div class="main-description">
+                            {{item.description}}
+                        </div>
+                        <div class="status-sala">
+                            <i [ngClass]="item.is_public ? 'fas fa-lock-open' : 'fas fa-lock'"></i>
+                        </div>
+                    </div>
+                </a>
+            </ng-template>
+        </div>
+    </div>
+
+    <!-- Modal Criar a Sala -->
+    <div class="modal fade" id="modalSala" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <form [formGroup]="formCreateRoom" (ngSubmit)="onSubmit(formCreateRoom.value)">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Criar nova sala</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" #btnCloseModal>
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <!-- <form [formGroup]="formCreateRoom" (ngSubmit)="onSubmit(formCreateRoom.value)"> -->
+                        <div class="form-group">
+                            <label for="room-name" class="col-form-label">Nome da Sala:</label>
+                            <input type="text" formControlName="name" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && f.name.errors }" required>
+                            <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                                <div *ngIf="f.name.errors.required">Nome da Sala requerido</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="room-description" class="col-form-label">Descrição:</label>
+                            <input type="text" formControlName="description" class="form-control" id="room-description">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="" class="mr-3">Tipo da Sala: </label>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="customRadioInline1" formControlName="is_public"
+                                    class="custom-control-input" [value]="true"
+                                    [checked]='true' #op1>
+                                <label class="custom-control-label" for="customRadioInline1">Pública</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="customRadioInline2" formControlName="is_public"
+                                    class="custom-control-input" [value]="false" #op2>
+                                <label class="custom-control-label" for="customRadioInline2">Privada</label>
+                            </div>
+
+                        </div>
+
+                        <div *ngIf="op2.checked" class="form-group">
+                            <label for="room-password" class="col-form-label">Senha da sala:</label>
+                            <input type="password" formControlName="password" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && f.password.errors }" id="room-password"
+                                minlength="8" required>
+                            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                <div *ngIf="f.password.errors">Senha deve ter no mínimo 8 caracteres.</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Criar</button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Modal Senha da Sala -->
+    <div class="modal fade" id="modalSenhaSala" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <form action="#" method="POST" class="form-inline" id="formSenhaSala">
+                <!-- <input type="hidden" name="method" value="autenticarSala"> -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="NomeSala">Teste sala</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="input-group">
+                            <!-- <input type="hidden" name="id-sala" id="id-sala"> -->
+                            <label for="inputSenhaSalaAutenticacao" class="mr-2">Senha da Sala</label>
+                            <input type="password" id="inputSenhaSalaAutenticacao" name="senha_autenticacao_sala"
+                                class="form-control" placeholder="********" required autofocus>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                        <button type="submit" class="btn btn-primary">Entrar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

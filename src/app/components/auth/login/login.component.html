@@ -1,0 +1,89 @@
+<div class="all-content">
+    <div class="container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <div class="row">
+            <div class="col-md-12">
+                <header class="masthead mb-auto">
+                    <div class="inner">
+                        <a href="/"><h3 class="masthead-brand">Chat Node<span><i class="fas fa-comments pl-2"></i></span></h3></a>
+                        <nav class="nav nav-masthead justify-content-center">
+                            <a class="nav-link" href="#">Novidades</a>
+                            <a class="nav-link" href="#">Contato</a>
+                            <a class="nav-link" href="/register">Não tenho Conta</a>
+                        </nav>
+                    </div>
+                </header>
+            </div>
+        </div>
+
+        <section class="login-block">            
+            <div class="row" id="row-carrousel">
+                <div class="col-md-8 banner-sec">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <img class="d-block" src="../../../assets/images/banner01.jpg" width="100%" height="500px" alt="First slide">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <div class="banner-text">
+                                        <h2>This is Heaven</h2>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+                                    </div>	
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block" src="../../../assets/images/banner02.jpg" width="100%" height="500px"  alt="First slide">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <div class="banner-text">
+                                        <h2>This is Heaven</h2>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+                                    </div>	
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <img class="d-block" src="../../../assets/images/banner03.jpg" width="100%" height="500px"  alt="First slide">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <div class="banner-text">
+                                        <h2>This is Heaven</h2>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+                                    </div>	
+                                </div>
+                            </div>
+                        </div>	   
+                    </div>
+                </div>
+
+                <div class="col-md-4 login-section">
+                    <h2 class="text-center">Acessar Conta</h2>
+                    <form [formGroup]="loginForm" (ngSubmit)="onFormSubmit(loginForm.value)" class="login-form">
+                        <div class="form-group">
+                            <label for="inputEmail" class="text-uppercase">Email</label>
+                            <input type="email" id="inputEmail" formControlName="username" class="form-control" placeholder="exemplo@email.com" [ngClass]="{'is-invalid': submitted && f.username.errors}" required>
+                            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                                <div *ngIf="f.username.errors.required">Email is required</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputPassword" class="text-uppercase">Senha</label>
+                            <input type="password" id="inputPassword" formControlName="password" class="form-control" placeholder="********" [ngClass]="{'is-invalid': submitted && f.password.errors}" required>
+                            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                <div *ngIf="f.password.errors.required">Password is required</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-lg btn-login mt-2">Entrar</button>
+                            <p class="mt-5 mb-3 text-muted">v. 1.1.0</p>
+                        </div>
+
+                    </form>    
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

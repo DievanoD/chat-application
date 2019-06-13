@@ -1,0 +1,89 @@
+<div class="all-content">
+    <div class="container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <div class="row">
+            <div class="col-md-12">
+                <header class="masthead mb-auto">
+                    <div class="inner">
+                        <a href="/">
+                            <h3 class="masthead-brand">Chat Node<span><i class="fas fa-comments pl-2"></i></span></h3>
+                        </a>
+                        <nav class="nav nav-masthead justify-content-center">
+                            <a class="nav-link" href="#">Novidades</a>
+                            <a class="nav-link" href="#">Contato</a>
+                            <a class="nav-link" href="/">Acessar Conta</a>
+                        </nav>
+                    </div>
+                </header>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-4 register-section" id="div-register">
+                <h2 class="text-center">Registre-se</h2>
+                <form [formGroup]="userRegisterForm" (ngSubmit)="onFormSubmit(userRegisterForm.value)"
+                    class="form-signin">
+                    <div class="input-group my-3">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><span><i class="fas fa-user"></i></span></div>
+                        </div>
+                        <input type="text" id="inputNome" class="form-control" formControlName="name"
+                            placeholder="Nome Completo" [ngClass]="{ 'is-invalid': submitted && f.name.errors }"
+                            required>
+                        <!-- <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                            <div *ngIf="f.name.errors.required">Name is required</div>
+                        </div> -->
+                    </div>
+
+                    <div class="input-group my-3">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><i class="fas fa-smile"></i></div>
+                        </div>
+                        <input type="text" id="inputNickname" formControlName="nickname" class="form-control"
+                            placeholder="Apelido" [ngClass]="{ 'is-invalid': submitted && f.nickname.errors }"
+                            required>
+                        <!-- <div *ngIf="submitted && f.nickname.errors" class="invalid-feedback">
+                            <div *ngIf="f.nickname.errors">Nickname is required</div>
+                        </div> -->
+                    </div>
+
+                    <div class="input-group my-3">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><i class="fas fa-envelope"></i></div>
+                        </div>
+                        <input type="email" id="inputEmail" formControlName="email" class="form-control"
+                            placeholder="E-mail" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" required>
+                        <!-- <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div *ngIf="f.email.errors">E-mail is required</div>
+                        </div> -->
+                    </div>
+
+
+                    <div class="input-group my-3">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><span><i class="fas fa-lock"></i></span></div>
+                        </div>
+                        <input type="password" id="inputSenha" formControlName="password" class="form-control"
+                            placeholder="Senha" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" required>
+                        <!-- <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                            <div *ngIf="f.password.errors">Password is required</div>
+                        </div> -->
+                    </div>
+
+                    <div class="input-group my-3">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><span><i class="fas fa-lock"></i></span></div>
+                        </div>
+                        <input type="password" id="inputConfirmaSenha" formControlName="confirmPassword"
+                            class="form-control" placeholder="Confirma Senha" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" required>
+                        <!-- <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+                            <div *ngIf="f.confirmPassword.errors">Confirm Password is required</div>
+                        </div> -->
+                    </div>
+
+                    <button type="submit" class="btn btn-lg btn-register btn-block">Cadastrar</button>
+                    <!--<p class="mt-5 mb-3 text-muted">&copy; 2018</p>-->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
