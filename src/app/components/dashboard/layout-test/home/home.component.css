@@ -25,7 +25,8 @@ a:focus {
 }
 
 .navbar {
-    padding: 15px 10px;
+    height: 100%;
+    padding: 10.5px 10px;
     background: #fff;
     border: none;
     border-radius: 0;
@@ -44,6 +45,15 @@ a:focus {
     height: 1px;
     border-bottom: 1px dashed #ddd;
     margin: 40px 0;
+}
+
+.btn-collpase{
+    background-color: #55BB8A;
+    color: white;
+}
+
+.nav-icon{
+    font-size: 22px;
 }
 
 /* ---------------------------------------------------
@@ -82,7 +92,7 @@ a:focus {
 
 #sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid #47748b;
+    border-bottom: 1px solid white;
 }
 
 #sidebar ul p {
@@ -126,7 +136,7 @@ ul ul a {
 }
 
 ul.CTAs {
-    padding: 20px;
+    padding: 0px;
 }
 
 ul.CTAs a {
@@ -137,7 +147,7 @@ ul.CTAs a {
     margin-bottom: 5px;
 }
 
-a.download {
+/* a.download {
     background: #fff;
     color: #7386D5;
 }
@@ -146,7 +156,7 @@ a.article,
 a.article:hover {
     background: #6d7fcc !important;
     color: #fff !important;
-}
+} */
 
 /* ---------------------------------------------------
     CONTENT STYLE
@@ -172,14 +182,25 @@ a.article:hover {
     width: 100%;
     height: calc(100vh - 140px);
     overflow: auto;
+    background-color: antiquewhite;
 }
 
-.nav-footer{
+.navbar-footer{
     width: 100%;
     height: 70px;
-    background-color: rgb(207, 217, 228);
+    /* ----------- */
+    border: none;
+    border-radius: 0;
+    box-shadow: 1px -2px 3px rgba(0, 0, 0, 0.1);
+    /* position: relative; */
     position: absolute;
     bottom: 0;
+    /* ---------- */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5rem 1rem;
 }
 /* ---------------------------------------------------
     MEDIAQUERIES
