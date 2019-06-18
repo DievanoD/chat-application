@@ -1,21 +1,63 @@
-<nav class="navbar navbar-expand-md navbar-light bg-light">
-    <div class="d-flex w-50 order-0">
-        <a [routerLink]="['/dashboard/rooms']">
-            <div class="btn-voltar">
-                <i class="far fa-arrow-alt-circle-left mr-1"></i>
-                <span class="lbl-voltar">Voltar para Salas</span>
-            </div>
+<!-- NavBar Content -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+
+        <!-- <button type="button" id="sidebarCollapse" class="btn btn-collpase" (click)="collapseSidebar()">
+            <i [ngClass]="collapsed ? 'fas fa-angle-right' : 'fas fa-angle-left'"></i>
+        </button> -->
+
+        <a [routerLink]="['/home/rooms']" role="button">
+            <span class="btn-back-room">
+                <i class="fas fa-arrow-left"></i>
+                Voltar
+            </span>
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
-            <span class="navbar-toggler-icon"></span>
+
+        <div class="card-nav-icon ml-3">
+            <div class="img-nav">
+                <img src="../../../../../assets/images/home.png" class="img-rounded" alt="..." width="40" height="35">
+            </div>
+
+            <div class="card-nav-icon-body">
+                <span class="title-room">{{nameRoom}}</span>
+                <span class="description-room">{{descriptionRoom}}</span>
+            </div>
+
+        </div>
+
+        <button class="btn btn-secondary d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fas fa-align-justify"></i>
         </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav navbar-nav ml-auto">
+                <!-- <li class="nav-item active">
+            <a class="nav-link" href="#">Page</a>
+          </li> -->
+                <li class="nav-item mr-2">
+                    <span class="nav-link nav-icon">
+                        <i class="fas fa-user-cog"></i>
+                    </span>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <a href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" data-display="static"
+                            aria-haspopup="true" aria-expanded="false">
+                            <span class="nav-link nav-icon"><i class="fas fa-ellipsis-v"></i></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="/" (click)="logout()">Sair <span><i
+                                        class="fas fa-sign-out-alt"></i></span></a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
-    <div class="navbar-collapse collapse justify-content-center order-2" id="collapsingNavbar">
-        <span class="navbar-brand mr-1">{{nameRoom}}</span>
-    </div>
-    <span class="navbar-text small text-truncate mt-1 w-50 text-right order-1 order-md-last">always show</span>
 </nav>
-<div class="painel">
+
     <section class="messages">
         <div class="screen-mgs" #scrollMsg [scrollTop]="scrollMsg.scrollHeight">
 
@@ -44,14 +86,15 @@
         <div class="card-write-msg">
             <form>
                 <div class="row">
-                    <div class="col-md-10">
+                    <div class="col-md-10 col-sm-10 col-10">
                         <!-- <input type="text" class="form-control" placeholder="Digite algo aqui..."> -->
-                        <input type="text" class="form-control" [(ngModel)]="messageText" name="messageText" [ngClass]="{ 'is-invalid': !messageValidator }" placeholder="Escreva uma mensagem...">
+                        <input type="text" class="form-control" [(ngModel)]="messageText" name="messageText"
+                            [ngClass]="{ 'is-invalid': !messageValidator }" placeholder="Escreva uma mensagem...">
                         <!-- <div *ngIf="!messageValidator" class="invalid-feedback">
                             <div *ngIf="!messageValidator">Mensagem em branco!</div>
                         </div> -->
                     </div>
-                    <div class="col">
+                    <div class="col-md-2 col-sm-2 col-2">
                         <button type="button" class="btn btn-success btn-block" (click)="send()"><i
                                 class="fab fa-telegram-plane"></i> Enviar</button>
                     </div>
@@ -59,5 +102,3 @@
             </form>
         </div>
     </section>
-
-</div>

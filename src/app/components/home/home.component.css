@@ -24,13 +24,13 @@ a:focus {
     transition: all 0.3s;
 }
 
-.navbar {
+/* .navbar {
     height: 100%;
     padding: 10.5px 10px;
     background: #fff;
     border: none;
     border-radius: 0;
-    /* margin-bottom: 40px; */
+    /* margin-bottom: 40px; 
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
@@ -38,18 +38,13 @@ a:focus {
     box-shadow: none;
     outline: none !important;
     border: none;
-}
+} */
 
 .line {
     width: 100%;
     height: 1px;
     border-bottom: 1px dashed #ddd;
     margin: 40px 0;
-}
-
-.btn-collpase{
-    background-color: #55BB8A;
-    color: white;
 }
 
 .nav-icon{
@@ -85,7 +80,7 @@ a:focus {
 
 #sidebar .sidebar-header {
     padding: 18.5px;
-    height: 70px;
+    height: 65px;
     /* background: #6d7fcc; */
     background: rgb(85, 187, 138);
 }
@@ -147,17 +142,6 @@ ul.CTAs a {
     margin-bottom: 5px;
 }
 
-/* a.download {
-    background: #fff;
-    color: #7386D5;
-}
-
-a.article,
-a.article:hover {
-    background: #6d7fcc !important;
-    color: #fff !important;
-} */
-
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */
@@ -175,14 +159,21 @@ a.article:hover {
 #content.active {
     width: 100%;
 }
+
+.btn-collpase{
+    position: absolute;
+    bottom: 50%;
+    background-color: #55BB8A;
+    color: white;
+}
 /* ---------------------------------------------------
     TESTES
 ---------------------------------------------------*/
 .painel{
     width: 100%;
-    height: calc(100vh - 140px);
-    overflow: auto;
-    background-color: antiquewhite;
+    height: calc(100vh - 70px);
+    /* overflow: auto; */
+    /* background-color: #f4f4f4; */
 }
 
 .navbar-footer{

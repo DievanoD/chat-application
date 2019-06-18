@@ -1,0 +1,27 @@
+.card-nav-icon{
+    display: inline-flex;
+    font-family: 'Poppins', sans-serif;
+    color: gray;
+}
+
+.img-nav{
+    border-radius: 10px;
+    width: 50px;
+    height: 46px;
+    padding: 5px 5px;
+    background-color: white;
+    border: 1px solid  gray;
+}
+
+.card-nav-icon-body{
+    display: grid;
+    padding-left: 5px;
+}
+
+.title-room{
+    font-size: 12pt;
+}
+
+.description-room{
+    font-size: 10pt;
+}

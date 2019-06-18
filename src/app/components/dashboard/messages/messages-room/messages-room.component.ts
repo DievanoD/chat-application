@@ -25,6 +25,7 @@ export class MessagesRoomComponent implements OnInit, OnDestroy {
   private sub: any;
 
   nameRoom = '';
+  descriptionRoom = '';
 
   // DATE VARIABLES
   currentDate: any = '';
@@ -50,6 +51,7 @@ export class MessagesRoomComponent implements OnInit, OnDestroy {
     this.roomService.getRoomById(this.id).subscribe(room => {
       this.currentRoom = room;
       this.nameRoom = room.name;
+      this.descriptionRoom = room.description;
     });
 
     this.loadMessages(this.id);
@@ -160,5 +162,9 @@ export class MessagesRoomComponent implements OnInit, OnDestroy {
   typingUser(nick) {
     // console.log(nick);
     this.chatService.typing(nick);
+  }
+
+  logout(){
+    this.auth.logout();
   }
 }

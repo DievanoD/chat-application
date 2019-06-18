@@ -3,6 +3,7 @@ import { RoomService } from 'src/app/services/room.service';
 import { Room } from 'src/app/models/Room';
 import { FormGroup, FormControl, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-room',
@@ -23,7 +24,7 @@ export class RoomComponent implements OnInit {
 
   @ViewChild('btnCloseModal') btnModal: ElementRef;
 
-  constructor(private roomService: RoomService, private router: Router, private formBuilder: FormBuilder) { }
+  constructor(private roomService: RoomService, private router: Router, private formBuilder: FormBuilder, private auth: AuthenticationService) { }
 
   ngOnInit() {
     this.roomService.getRooms().subscribe(room => {
@@ -95,6 +96,10 @@ export class RoomComponent implements OnInit {
       console.log('Invalid Form');
     }
 
+  }
+
+  logout(){
+    this.auth.logout();
   }
 
 }

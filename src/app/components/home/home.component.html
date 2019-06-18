@@ -1,0 +1,78 @@
+<div class="wrapper">
+  <!-- Sidebar  -->
+  <nav id="sidebar" #sidebar [ngClass]="{'active': collapsed}">
+    <div class="sidebar-header">
+      <h3>Chat Node<span><i class="fas fa-comment pl-2"></i></span></h3>
+    </div>
+
+    <ul class="list-unstyled components">
+      <div class="text-center py-3">
+        <img src="../../../assets/images/user2.png" class="img-rounded" alt="..." width="155" height="145">
+      </div>
+      <p class="text-center">{{currentUser.name}}</p>
+      <hr>
+      <li class="active">
+        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+        <ul class="collapse list-unstyled" id="homeSubmenu">
+          <li>
+            <a [routerLink]="['/home/rooms']" routerLinkActive="active">Salas</a>
+          </li>
+          <li>
+            <a href="/home">Mensagens</a>
+          </li>
+          <li>
+            <a href="/home">Contatos</a>
+          </li>
+        </ul>
+      </li>
+
+      <!-- <li>
+        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+        <ul class="collapse list-unstyled" id="pageSubmenu">
+          <li>
+            <a href="#">Page 1</a>
+          </li>
+          <li>
+            <a href="#">Page 2</a>
+          </li>
+          <li>
+            <a href="#">Page 3</a>
+          </li>
+        </ul>
+      </li> -->
+      <li>
+        <a href="/test">Suporte</a>
+      </li>
+      <li>
+        <a href="/test">Sobre</a>
+      </li>
+    </ul>
+
+    <ul class="list-unstyled CTAs">
+      <!-- <li>
+        <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
+      </li>
+      <li>
+        <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
+      </li> -->
+    </ul>
+  </nav>
+
+  <!-- Page Content  -->
+  <div id="content" #content [ngClass]="{'active': collapsed}">
+
+    <button type="button" id="sidebarCollapse" class="btn btn-collpase" (click)="collapseSidebar()">
+      <i [ngClass]="collapsed ? 'fas fa-angle-right' : 'fas fa-angle-left'"></i>
+    </button>
+
+    <!-- Painel Content -->
+    <div class="painel">
+      <router-outlet></router-outlet>
+    </div>
+
+    <!-- <div class="navbar-footer navbar-expand-lg navbar-light bg-light">
+
+    </div> -->
+
+  </div>
+</div>

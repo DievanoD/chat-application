@@ -13,7 +13,8 @@ import { RegisterComponent } from './components/auth/register/register.component
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RoomComponent } from './components/dashboard/rooms/room/room.component';
 import { MessagesRoomComponent } from './components/dashboard/messages/messages-room/messages-room.component';
-import { HomeComponent } from './components/dashboard/layout-test/home/home.component';
+import { HomeComponent } from './components/home/home.component';
+import { TitleNavComponent } from './components/home/title-nav/title-nav.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { HomeComponent } from './components/dashboard/layout-test/home/home.comp
     DashboardComponent,
     RoomComponent,
     MessagesRoomComponent,
-    HomeComponent
+    HomeComponent,
+    TitleNavComponent
   ],
   imports: [
     BrowserModule,

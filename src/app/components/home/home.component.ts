@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-home',
@@ -11,17 +12,26 @@ export class HomeComponent implements OnInit {
   // @ViewChild('sidebar') sidebar: ElementRef;
   // @ViewChild('content') content: ElementRef;
 
-  collapsed = false;
+  currentUser: any;
 
-  constructor() { }
+  collapsed = false;
+  titleNav = '';
+  descriptionNav = '';
+
+  constructor(private auth: AuthenticationService) {
+    this.currentUser = this.auth.getSession('currentUser');
+  }
 
   ngOnInit() {
-    
   }
 
   collapseSidebar() {
     this.collapsed = !this.collapsed;
     // console.log(this.collapsed);
+  }
+
+  logout() {
+    this.auth.logout();
   }
 
 }

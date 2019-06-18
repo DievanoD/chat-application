@@ -7,7 +7,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RoomComponent } from './components/dashboard/rooms/room/room.component';
 import { MessagesRoomComponent } from './components/dashboard/messages/messages-room/messages-room.component';
 import { MessagesTestComponent } from './components/dashboard/messages/messages-test/messages-test.component';
-import { HomeComponent } from './components/dashboard/layout-test/home/home.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   // DEFAULT Routes
@@ -44,8 +44,19 @@ const routes: Routes = [
   },
   // TEST's Layout Routes
   {
-    path: 'test',
-    component: HomeComponent
+    path: 'home',
+    component: HomeComponent,
+    canActivate: [AuthGuardService],
+    children: [    // Rota filha. Ex.: /home/rooms
+      {
+        path: 'rooms',
+        component: RoomComponent
+      },
+      {
+        path: 'room/:id',
+        component: MessagesRoomComponent
+      }
+    ]
   }
 ];
 
