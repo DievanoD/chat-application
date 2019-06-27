@@ -68,6 +68,16 @@ a:focus {
     overflow-y: auto;
 }
 
+.screen-mgs::-webkit-scrollbar{
+    width:10px;
+    background:#fafafa;
+}
+
+.screen-mgs::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: #bbbbbb;
+}
+
 /* SECTION 2 */
 .write-mgs{
     background-color: #fafafa;

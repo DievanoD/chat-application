@@ -74,6 +74,22 @@ a:focus {
     overflow: auto;
 }
 
+#sidebar::-webkit-scrollbar{
+    width:5px;
+    background:transparent;
+}
+
+/* #sidebar::-webkit-scrollbar-track{
+    background: rgba(0,0,0,0.1);
+} */
+
+#sidebar::-webkit-scrollbar-thumb{
+    width: 2.5px;
+    border-radius:10px;
+    /* border: 1px solid white; */
+    background:rgba(255, 255, 255, 0.75);
+}
+
 #sidebar.active {
     margin-left: -250px;
 }
@@ -162,7 +178,7 @@ ul.CTAs a {
 
 .btn-collpase{
     position: absolute;
-    bottom: 50%;
+    top: 70px;
     background-color: #55BB8A;
     color: white;
 }
