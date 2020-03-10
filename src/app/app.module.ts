@@ -15,6 +15,7 @@ import { RoomComponent } from './components/dashboard/rooms/room/room.component'
 import { MessagesRoomComponent } from './components/dashboard/messages/messages-room/messages-room.component';
 import { HomeComponent } from './components/home/home.component';
 import { TitleNavComponent } from './components/home/title-nav/title-nav.component';
+import { AccountComponent } from './components/user/account/account.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { TitleNavComponent } from './components/home/title-nav/title-nav.compone
     RoomComponent,
     MessagesRoomComponent,
     HomeComponent,
-    TitleNavComponent
+    TitleNavComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,

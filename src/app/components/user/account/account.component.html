@@ -1,0 +1,95 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+
+    <!-- <button type="button" id="sidebarCollapse" class="btn btn-collpase" (click)="collapseSidebar()">
+            <i [ngClass]="collapsed ? 'fas fa-angle-right' : 'fas fa-angle-left'"></i>
+        </button> -->
+
+
+
+    <!-- <div class="card-nav-icon ml-3">
+            <div class="img-nav">
+                <img src="../../../../../assets/images/home.png" class="img-rounded" alt="..." width="40" height="35">
+            </div>
+
+            <div class="card-nav-icon-body">
+                <span class="title-room">{{nameRoom}}</span>
+                <span class="description-room">{{descriptionRoom}}</span>
+            </div>
+
+        </div> -->
+
+    <button class="btn btn-secondary d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+      data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <i class="fas fa-align-justify"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="nav navbar-nav ml-auto">
+        <!-- <li class="nav-item active">
+            <a class="nav-link" href="#">Page</a>
+          </li> -->
+        <li class="nav-item mr-2">
+          <a [routerLink]="['/home/account']" routerLinkActive="router-link-active">
+            <span class="nav-link nav-icon">
+              <i class="fas fa-user-cog"></i>
+            </span>
+          </a>
+
+        </li>
+        <li class="nav-item">
+          <div class="dropdown">
+            <a href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" data-display="static"
+              aria-haspopup="true" aria-expanded="false">
+              <span class="nav-link nav-icon"><i class="fas fa-ellipsis-v"></i></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="/" (click)="logout()">Sair <span><i
+                    class="fas fa-sign-out-alt"></i></span></a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card card-account">
+        <div class="card-header">
+          <h4 class="my-0 font-weight-normal">Minha Conta</h4>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="accountForm" (ngSubmit)="onSubmit(accountForm.value)">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Nome Completo</label>
+              <input type="text" class="form-control" id="exampleInputName1" formControlName="name" placeholder="Seu nome completo é...">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Apelido</label>
+                <input type="text" class="form-control" id="exampleInputnickname1" formControlName="nickname" aria-describedby="nickname" placeholder="Como você quer ser chamado?">
+                <small id="nickname" class="form-text text-muted">O apelido é como você se identifica nas mensagens.</small>
+              </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Endereço de E-mail</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" formControlName="email" aria-describedby="emailHelp"
+                placeholder="Entre com o e-mail">
+              <small id="emailHelp" class="form-text text-muted">O e-mail vinculado é usado no seu login.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Senha</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password" name="password" placeholder="**********">
+            </div>
+            <!-- <button type="button" class="btn btn-secondary">Cancelar</button> -->
+            <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</section>

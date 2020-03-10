@@ -6,7 +6,7 @@ import { map, tap, catchError, shareReplay } from 'rxjs/operators';
 import { forEach } from '@angular/router/src/utils/collection';
 
 const httpOptions = {
-  headers: new HttpHeaders({'Content-Type':'application/json'})
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
 @Injectable({
@@ -18,24 +18,24 @@ export class AuthenticationService {
 
   constructor(private http: HttpClient) { }
 
-  login(email:string, password:string ) {
-    return this.http.post<any>(`${this.BASE_URL}/login`, {email, password}).pipe(
-      tap((res) => {this.setSession(res)})
+  login(email: string, password: string) {
+    return this.http.post<any>(`${this.BASE_URL}/login`, { email, password }).pipe(
+      tap((res) => { this.setSession(res) })
     );
   }
-      
+
   private setSession(authResult) {
     // const expiresAt = moment().add(authResult.expiresIn,'second');
     // console.log(authResult.user);
-    
+
     localStorage.setItem('id_token', authResult.token);
     localStorage.setItem('currentUser', JSON.stringify(authResult.user));
     // localStorage.setItem("expires_at", JSON.stringify(expiresAt.valueOf()) );
   }
 
-  getSession(data): string{
+  getSession(data): string {
     try {
-      let user: Object;  
+      let user: Object;
       switch (data) {
         case "token":
           return localStorage.getItem('id_token');
@@ -53,7 +53,7 @@ export class AuthenticationService {
       console.log("Error: " + error);
     }
   }
-  
+
   // getSession(data): string{
   //   try {
   //     switch (data) {
@@ -88,7 +88,7 @@ export class AuthenticationService {
     );
   }
 
-  private handleError<T> (operation = 'operation', result?: T) {
+  private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);
       return of(result as T);

@@ -45,6 +45,6 @@ export class RoomService {
     return (error: any): Observable<T> => {
       console.error(error);
       return of(result as T);
-    }
+    };
   }
 }

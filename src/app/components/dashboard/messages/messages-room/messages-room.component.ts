@@ -33,7 +33,7 @@ export class MessagesRoomComponent implements OnInit, OnDestroy {
   private groupMessages: GroupMessage[] = [];
 
   constructor(private chatService: ChatService, private auth: AuthenticationService,
-    private groupMessageService: GroupMessageService, private roomService: RoomService, private route: ActivatedRoute) {
+              private groupMessageService: GroupMessageService, private roomService: RoomService, private route: ActivatedRoute) {
     this.currentUser = this.auth.getSession('currentUser');
     // this.chatService.newUserJoined().subscribe(data => {
     //   console.log('Usuário: ' + data.user + 'juntou-se a sala.');
@@ -164,7 +164,7 @@ export class MessagesRoomComponent implements OnInit, OnDestroy {
     this.chatService.typing(nick);
   }
 
-  logout(){
+  logout() {
     this.auth.logout();
   }
 }

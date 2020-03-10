@@ -6,8 +6,8 @@ import { RegisterComponent } from './components/auth/register/register.component
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RoomComponent } from './components/dashboard/rooms/room/room.component';
 import { MessagesRoomComponent } from './components/dashboard/messages/messages-room/messages-room.component';
-import { MessagesTestComponent } from './components/dashboard/messages/messages-test/messages-test.component';
 import { HomeComponent } from './components/home/home.component';
+import { AccountComponent } from './components/user/account/account.component';
 
 const routes: Routes = [
   // DEFAULT Routes
@@ -55,6 +55,10 @@ const routes: Routes = [
       {
         path: 'room/:id',
         component: MessagesRoomComponent
+      },
+      {
+        path: 'account',
+        component: AccountComponent
       }
     ]
   }

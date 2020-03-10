@@ -70,7 +70,7 @@
 
                 <div class="row row-msg">
                     <div class="col">
-                        <div [ngClass]="item.user.name === currentUser.name ? 'bg-msg-me' : 'bg-msg-he'">
+                        <div [ngClass]="item.user.nickname === currentUser.nickname ? 'bg-msg-me' : 'bg-msg-he'">
                             <span class="lbl-nick px-2">{{item.user.nickname}}</span><br>
                             <span class="lbl-cont-msg px-2 pb-1">{{item.content}}</span>
                             <span class="lbl-time-msg">{{item.createdAt | date: 'HH:mm'}}</span>

@@ -178,9 +178,11 @@ ul.CTAs a {
 
 .btn-collpase{
     position: absolute;
-    top: 70px;
+    top: 14px;
+    left: 10px;
     background-color: #55BB8A;
     color: white;
+    z-index: 2000;
 }
 /* ---------------------------------------------------
     TESTES

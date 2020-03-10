@@ -6,7 +6,7 @@
             <i [ngClass]="collapsed ? 'fas fa-angle-right' : 'fas fa-angle-left'"></i>
         </button> -->
 
-        
+
 
         <!-- <div class="card-nav-icon ml-3">
             <div class="img-nav">
@@ -32,9 +32,12 @@
             <a class="nav-link" href="#">Page</a>
           </li> -->
                 <li class="nav-item mr-2">
-                    <span class="nav-link nav-icon">
-                        <i class="fas fa-user-cog"></i>
-                    </span>
+                    <a [routerLink]="['/home/account']" routerLinkActive="router-link-active" >
+                        <span class="nav-link nav-icon">
+                            <i class="fas fa-user-cog"></i>
+                        </span>
+                    </a>
+
                 </li>
                 <li class="nav-item">
                     <div class="dropdown">
@@ -138,13 +141,12 @@
                             <label for="" class="mr-3">Tipo da Sala: </label>
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input type="radio" id="customRadioInline1" formControlName="is_public"
-                                    class="custom-control-input" [value]="true"
-                                    [checked]='true' #op1>
+                                    class="custom-control-input" [value]="true" [checked]='true' #op1>
                                 <label class="custom-control-label" for="customRadioInline1">Pública</label>
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input type="radio" id="customRadioInline2" formControlName="is_public"
-                                    class="custom-control-input" [value]="false" #op2>
+                                    class="custom-control-input" [value]="false" #op2 disabled>
                                 <label class="custom-control-label" for="customRadioInline2">Privada</label>
                             </div>
 
